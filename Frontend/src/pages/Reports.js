@@ -4,7 +4,7 @@ const ReportsPage = () => {
   const [isLoading, updateLoading] = useState(true);
   const [loadedData, updateData] = useState([]);
   useEffect(() => {
-    fetch("http://192.168.2.2:8081/reports")
+    fetch("http://localhost:8081/reports")
       .then((response) => {
         return response.json();
       })

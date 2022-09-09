@@ -17,7 +17,7 @@ const AddMeetup = () => {
 
   //NodeJs POST handler
   const meetupDataHandler = (data) => {
-    fetch("http://192.168.2.2:8081/reports", {
+    fetch("http://localhost:8081/reports", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
