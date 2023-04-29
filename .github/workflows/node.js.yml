@@ -26,6 +26,6 @@ jobs:
         cache: 'npm'
         cache-dependency-path: Backend/package-lock.json
         
-    - run: cd ~/home/ubuntu/actions-runner/7T2-beta/7T2-beta/7T2-beta/Backend
+    - run: cd Backend
     - run: npm install
     - run: node index.js
