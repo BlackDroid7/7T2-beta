@@ -33,30 +33,28 @@ async function getreports() {
 }
 
 async function insertPremarketReport(body) {
-    console.log("Inside premarket function "+JSON.stringify(body));
     let result = await client.connect();
     let db = result.db(database);
     let collection = db.collection('Reports');
     collection.insertOne(body);
 }
 
-app.get("/home", (re, res) => {
+app.get("/home", (req, res) => {
     res.send("Welcome to 7T2.com");
 })
 
-//reports APIs
 app.post("/reports", (req, res) => {
     insertPremarketReport(req.body);
     res.send("Working fine");
 });
 
-app.get("/reports", (req, res) => {
-    getreports();
+app.get("/reports", async (req, res) => {
+    await getreports();
     res.send(reports);
 });
 
-app.get("/team", (req, res) => {
-    getAll();
+app.get("/team", async (req, res) => {
+    await getAll();
     res.send(reponse);
 })
 

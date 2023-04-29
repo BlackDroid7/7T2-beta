@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  node-backend:
+    build: C:\\Users\\vivek.bhosale\\Documents\\NodeJS Projects\\7T2-beta\\7T2-beta-main\\Backend
+    image: node-backend
+    ports: 
+      - "8081:8081"
+    networks:
+      - currency-network
+
+  react-frontend:
+    build: C:\\Users\\vivek.bhosale\\Documents\\NodeJS Projects\\7T2-beta\\7T2-beta-main\\Frontend
+    image: react-frontend
+    ports: 
+      - "3000:3000"
+    depends_on:
+      - node-backend
+    networks:
+      - currency-network
+
+networks:
+  currency-network:
