@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   node-backend:
-    build: C:\\Users\\vivek.bhosale\\Documents\\NodeJS Projects\\7T2-beta\\7T2-beta-main\\Backend
+    build: /home/ubuntu/actions-runner/7T2-beta/7T2-beta/7T2-beta/Backend
     image: node-backend
     ports: 
       - "8081:8081"
@@ -10,7 +10,7 @@ services:
       - currency-network
 
   react-frontend:
-    build: C:\\Users\\vivek.bhosale\\Documents\\NodeJS Projects\\7T2-beta\\7T2-beta-main\\Frontend
+    build: /home/ubuntu/actions-runner/7T2-beta/7T2-beta/7T2-beta/Frontend
     image: react-frontend
     ports: 
       - "3000:3000"
