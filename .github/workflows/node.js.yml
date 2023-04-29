@@ -26,4 +26,4 @@ jobs:
         cache: 'npm'
         cache-dependency-path: Backend/package-lock.json
         
-    - run: npm --version
+    - run: node index.js
