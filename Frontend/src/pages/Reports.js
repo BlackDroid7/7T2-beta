@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { instanceIp } from "../connections/Instanceip"
 
 const ReportsPage = () => {
   //const [isLoading, updateLoading] = useState(true);
@@ -8,7 +9,7 @@ const ReportsPage = () => {
   const fetchData = (value) => {
     clickedType = value;
     // useEffect(() => {
-    fetch("http://localhost:8081/reports")
+    fetch('http://' + instanceIp + ':6543/reports')
       .then((response) => {
         return response.json();
       })
@@ -54,11 +55,16 @@ const ReportsPage = () => {
       //   <p>Reports: {loadedData}</p>
       // </div>
       <div>
-        <button onClick={() => fetchData("1")}>Premarket</button>
-        <button onClick={() => fetchData("2")}>Report 2</button>
-        <button onClick={() => fetchData("3")}>Report 3</button>
+        <button onClick={() => fetchData("1")}>Pre Market</button>
+        <button onClick={() => fetchData("2")}>Post Market</button>
+        <button onClick={() => fetchData("3")}>Weekly Report</button>
+        <button onClick={() => fetchData("4")}>Monthly Report</button>
+        <button onClick={() => fetchData("5")}>Weekly Calendar</button>
+        <button onClick={() => fetchData("6")}>Stock Report</button>
+        <button onClick={() => fetchData("7")}>Mutual Funds</button>
       </div>
     );
   }
 };
 export default ReportsPage;
+

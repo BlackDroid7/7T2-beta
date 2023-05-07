@@ -51,10 +51,14 @@ const AddMeetupForm = (props) => {
         <div className={classes.control}>
           <label htmlFor="Report Type">Report Type</label>
           <select onChange={dropdownChange} ref={typeInput}>
-            <option value="0">Default</option>
+            {/* <option value="0">Default</option> */}
             <option value="1">Pre Market</option>
-            <option value="2">Report 2</option>
-            <option value="3">Report 3</option>
+            <option value="2">Post Market</option>
+            <option value="3">Weekly Report</option>
+            <option value="4">Monthly Report</option>
+            <option value="5">Weekly Calendar</option>
+            <option value="6">Stock Report</option>
+            <option value="7">Mutual Funds</option>
           </select>
         </div>
         <div className={classes.control}>
