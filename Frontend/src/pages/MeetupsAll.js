@@ -1,5 +1,6 @@
 import MeetupList from "../components/meetups/MeetupList";
 import { useState, useEffect } from "react";
+import { instanceIp } from "../connections/Instanceip"
 
 const AllMeetupPage = () => {
   const [isLoading, updateLoading] = useState(true);
@@ -10,7 +11,7 @@ const AllMeetupPage = () => {
     //   "access-control-allow-origin" : "*",
     //   'Content-Type': 'application/json'
     // }}
-    fetch('http://localhost:8081/team')
+    fetch('http://' + instanceIp + ':6543/team')
       .then((response) => {
         return response.json();
       })

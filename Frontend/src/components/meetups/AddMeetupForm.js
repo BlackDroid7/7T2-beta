@@ -14,6 +14,7 @@ const AddMeetupForm = (props) => {
   };
 
   //POST data
+  const typeInput = useRef();
   const titleInput = useRef();
   const imageInput = useRef();
   const addressInput = useRef();
@@ -21,6 +22,7 @@ const AddMeetupForm = (props) => {
   const reportDate = useRef();
   const onSubmitHandler = (event) => {
     event.preventDefault();
+    const typeInputValue = typeInput.current.value;
     const titleInputValue = titleInput.current.value;
     const imageInputValue = preMarketState ? null : imageInput.current.value;
     const addressInputValue = preMarketState ? null : addressInput.current.value;
@@ -28,10 +30,12 @@ const AddMeetupForm = (props) => {
     const reportDateValue = reportDate.current.value;
 
     const meetupData = preMarketState ? {
+      type: typeInputValue,
       title: titleInputValue,
       description: descInputValue,
       date: reportDateValue,
     } : {
+      type: typeInputValue,
       title: titleInputValue,
       image: imageInputValue,
       address: addressInputValue,
@@ -46,11 +50,15 @@ const AddMeetupForm = (props) => {
       <form className={classes.form} onSubmit={onSubmitHandler}>
         <div className={classes.control}>
           <label htmlFor="Report Type">Report Type</label>
-          <select onChange={dropdownChange}>
-            <option value="0">Default</option>
+          <select onChange={dropdownChange} ref={typeInput}>
+            {/* <option value="0">Default</option> */}
             <option value="1">Pre Market</option>
-            <option value="2">Report 2</option>
-            <option value="3">Report 3</option>
+            <option value="2">Post Market</option>
+            <option value="3">Weekly Report</option>
+            <option value="4">Monthly Report</option>
+            <option value="5">Weekly Calendar</option>
+            <option value="6">Stock Report</option>
+            <option value="7">Mutual Funds</option>
           </select>
         </div>
         <div className={classes.control}>
