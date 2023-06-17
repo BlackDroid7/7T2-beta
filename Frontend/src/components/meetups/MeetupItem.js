@@ -25,7 +25,6 @@ const MeetupItem = (props) => {
   return (
     <li className={classes.item}>
       <div className={classes.image}>
-        {/* <img src={props.image} alt={props.title} /> */}
         <Lottie options={defaultOptions} height={400} width={400} />
       </div>
       <div className={classes.content}>
@@ -33,9 +32,6 @@ const MeetupItem = (props) => {
         <address>{props.address}</address>
         <p>{props.description}</p>
       </div>
-      {/* <div className={classes.actions}>
-        <button>To Favorites</button>
-      </div> */}
     </li>
   );
 };

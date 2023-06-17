@@ -6,11 +6,6 @@ const AllMeetupPage = () => {
   const [isLoading, updateLoading] = useState(true);
   const [loadedData, updateData] = useState([]);
   useEffect(() => {
-    //fetch("https://sevent2-demo-default-rtdb.firebaseio.com/meetup.json")
-    // {headers: {
-    //   "access-control-allow-origin" : "*",
-    //   'Content-Type': 'application/json'
-    // }}
     fetch('http://' + instanceIp + ':6543/team')
       .then((response) => {
         return response.json();
