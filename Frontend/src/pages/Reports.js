@@ -2,13 +2,11 @@ import { useState } from "react";
 import { instanceIp } from "../connections/Instanceip"
 
 const ReportsPage = () => {
-  //const [isLoading, updateLoading] = useState(true);
   const [loadedData, updateData] = useState([]);
   const [clickHappened, makeIthappen] = useState(false);
   let clickedType = "0";
   const fetchData = (value) => {
     clickedType = value;
-    // useEffect(() => {
     fetch('http://' + instanceIp + ':6543/reports')
       .then((response) => {
         return response.json();
@@ -27,19 +25,9 @@ const ReportsPage = () => {
         }
 
         updateData(reports);
-        //updateLoading(false);
       });
-    //});
     makeIthappen(true);
   };
-
-  // if (isLoading) {
-  //   return (
-  //     <section>
-  //       <h3>Loading....</h3>
-  //     </section>
-  //   );
-  // }
 
   if (clickHappened) {
     return (
@@ -51,9 +39,6 @@ const ReportsPage = () => {
 
   if (!clickHappened) {
     return (
-      // <div>
-      //   <p>Reports: {loadedData}</p>
-      // </div>
       <div>
         <button onClick={() => fetchData("1")}>Pre Market</button>
         <button onClick={() => fetchData("2")}>Post Market</button>

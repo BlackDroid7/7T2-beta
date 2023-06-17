@@ -1,4 +1,4 @@
 
-const instanceIp = '3.129.45.227'
+const instanceIp = '3.133.144.55'
 
 export {instanceIp}
